@@ -8,7 +8,13 @@
   font-family: "Young Serif";
   src: url("assets/fonts/young-serif/YoungSerif-Regular.ttf") format("truetype");
 }
-
+/* List styles */
+ul {
+  margin-left: -1rem;
+}
+li {
+  padding-left: 1rem;
+}
 /* Box sizing rules */
 *,
 *::before,
@@ -49,7 +55,9 @@ body {
   min-height: 100vh;
   line-height: 1.5;
   font-family: "Outfit";
-  background-color: burlywood;
+  color: hsl(var(--clr-dark-charcoal));
+  background-color: hsl(var(--clr-white));
+  padding-bottom: 1rem;
 }
 
 /* Set shorter line heights on headings and interactive elements */
@@ -131,10 +139,16 @@ textarea:not([rows]) {
 }
 
 .fs-1 > *:where(:not(:first-child)) {
-  margin-top: var(--flow-space-1, 1.5rem);
+  margin-top: 0.65rem;
 }
 .fs-2 > *:where(:not(:first-child)) {
-  margin-top: var(--flow-space-2, 2rem);
+  margin-top: 1rem;
+}
+.fs-3 > *:where(:not(:first-child)) {
+  margin-top: 1.5rem;
+}
+.fs-4 > *:where(:not(:first-child)) {
+  margin-top: 2rem;
 }
 
 .ff-serif {
@@ -144,6 +158,19 @@ textarea:not([rows]) {
 .ff-sans {
   /* Weights: 400, 600, 700 */
   font-family: "Outfit";
+}
+
+.fs-400 {
+  font-size: 1rem;
+}
+.fs-500 {
+  font-size: 1.5rem;
+}
+.fs-600 {
+  font-size: 2rem;
+}
+.fs-700 {
+  font-size: 2.5rem;
 }
 
 .fw-400 {
@@ -156,13 +183,46 @@ textarea:not([rows]) {
   font-weight: 700;
 }
 
+.fc-nutmeg {
+  color: hsl(var(--clr-nutmeg));
+}
+
 /* Page styles */
+
+.prep {
+  padding: 1.75rem;
+  border-radius: 0.75rem;
+  background-color: #fff7fc;
+}
+.prep > h3 {
+  color: hsl(var(--clr-dark-raspberry));
+}
+
+.ingredients,
+.instructions {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid hsl(var(--clr-dark-charcoal), 0.2);
+}
+
+.nutrition-facts {
+  margin: 0;
+  padding: 1rem 0;
+}
+.nutrition-facts > * {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0.75rem 0 0.75rem 2rem;
+  border-bottom: 1px solid hsl(var(--clr-dark-charcoal), 0.2);
+}
 
 /* Media queries */
 
 @media (min-width: 40rem) {
+  header {
+    padding: 2rem 2rem 0 2rem;
+  }
   .hero {
-    padding: 2rem;
+    border-radius: 0.75rem;
   }
   body {
     max-width: 50rem;
@@ -172,6 +232,6 @@ textarea:not([rows]) {
     display: flex;
     justify-content: center;
     background-color: hsl(var(--clr-eggshell));
-    padding: 4rem 2rem;
+    padding: 7.5rem 2rem;
   }
 }
